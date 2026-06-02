@@ -1,44 +1,77 @@
-/**
- * Main CSS File
- *
- * Tailwind CSS v4 - Using new @import syntax
- * Docs: https://tailwindcss.com/docs/installation/using-vite
- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@import "tailwindcss";
+.brands-slider {
+  display: flex;
+  width: max-content;
+  animation: brands-marquee 25s linear infinite;
+}
 
-/* Tell Tailwind where to scan for classes */
-@source "./**/*.{js,jsx,ts,tsx}";
-@source "../index.html";
+.brands-slider:hover {
+  animation-play-state: paused;
+}
 
-/**
- * Custom Global Styles
- *
- * Add your custom global styles here if needed
- * Prefer using Tailwind utilities in components
- */
+@keyframes brands-marquee {
+  from {
+    transform: translateX(0);
+  }
 
-/* Smooth scrolling for anchor links */
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Hide scrollbar */
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Optional: Custom scrollbar styles */
-/* Uncomment if you want custom scrollbar
-::-webkit-scrollbar {
-  width: 10px;
+body {
+  font-family: Inter, sans-serif;
+  transition: background 0.3s ease;
 }
 
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
+/* DARK MODE */
+.dark {
+  background: #050505;
+  color: white;
 }
 
-::-webkit-scrollbar-thumb {
-  background: #888;
-  border-radius: 5px;
+/* LIGHT MODE */
+.light {
+  background: #f5f5f5;
+  color: #111;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #555;
+@layer components {
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold text-gray-900 dark:text-white;
+  }
+
+  .text-gradient {
+    @apply bg-gradient-to-r from-orange-600 to-orange-500 bg-clip-text text-transparent;
+  }
 }
-*/
+
+.testimonialSwiper .swiper-slide {
+  opacity: 0.55;
+  transform: scale(0.9);
+  filter: blur(1px);
+  transition: all 0.5s ease;
+}
+
+.testimonialSwiper .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+}
