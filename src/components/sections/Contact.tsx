@@ -41,7 +41,7 @@ export const Contact = () => {
               className='w-36 mx-auto mb-5'
             />
 
-            <h3 className='text-2xl font-bold text-slate-300 mb-3'>
+            <h3 className='text-2xl font-bold text-black dark:text-slate-300 mb-3'>
               Message Received!
             </h3>
 
@@ -68,7 +68,7 @@ export const Contact = () => {
           <div className='relative bg-white dark:bg-black rounded-3xl p-8 w-[90%] max-w-md shadow-2xl text-center'>
             <img src='/Failed.png' alt='failed' className='w-36 mx-auto mb-5' />
 
-            <h3 className='text-2xl font-bold text-black mb-3'>
+            <h3 className='text-2xl font-bold text-black dark:text-slate-400 mb-3'>
               Oops! Something went wrong.
             </h3>
 

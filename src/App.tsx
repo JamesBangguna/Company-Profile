@@ -8,7 +8,7 @@ import Process from './components/sections/Process';
 import { Solutions } from './components/sections/Solution';
 import { Portfolio } from './components/sections/Portfolio';
 import Testimonials from './components/sections/Testimonials';
-import { Industries } from './components/sections/Industries';
+import { Industries } from './components/sections/industries';
 import FAQ from './components/sections/FAQ';
 import { Contact } from './components/sections/Contact';
 
