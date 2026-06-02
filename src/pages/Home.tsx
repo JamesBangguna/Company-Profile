@@ -1,9 +1,9 @@
-import Navbar from '../component/layout/Navbar';
-import Footer from '../component/layout/Footer';
+import Navbar from '../components/layout/Navbar';
+import Footer from '../components/layout/Footer';
 
-import Hero from '../component/section/Hero';
-import Services from '../component/section/Services';
-import Testimonials from '../component/section/Testimonials';
+import Hero from '../components/sections/Hero';
+
+import Testimonials from '../components/sections/Testimonials';
 
 const Home = () => {
   return (
@@ -11,8 +11,6 @@ const Home = () => {
       <Navbar />
 
       <Hero />
-
-      <Services />
 
       <Testimonials />
 

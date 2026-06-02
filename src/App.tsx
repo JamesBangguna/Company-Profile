@@ -1,16 +1,16 @@
 import { useState, useEffect } from 'react';
-import Navbar from './component/layout/Navbar';
-import Footer from './component/layout/Footer';
-import Hero from './component/section/Hero';
-import TrustedBrands from './component/section/TrustedBrands';
-import { Stats } from './component/section/Stats';
-import Process from './component/section/Process';
-import { Solutions } from './component/section/Solution';
-import { Portfolio } from './component/section/Portfolio';
-import Testimonials from './component/section/Testimonials';
-import { Industries } from './component/section/industries';
-import FAQ from './component/section/FAQ';
-import { Contact } from './component/section/Contact';
+import Navbar from './components/layout/Navbar';
+import Footer from './components/layout/Footer';
+import Hero from './components/sections/Hero';
+import TrustedBrands from './components/sections/TrustedBrands';
+import { Stats } from './components/sections/Stats';
+import Process from './components/sections/Process';
+import { Solutions } from './components/sections/Solution';
+import { Portfolio } from './components/sections/Portfolio';
+import Testimonials from './components/sections/Testimonials';
+import { Industries } from './components/sections/Industries';
+import FAQ from './components/sections/FAQ';
+import { Contact } from './components/sections/Contact';
 
 function App() {
   const [darkMode, setIsDarkMode] = useState(() => {

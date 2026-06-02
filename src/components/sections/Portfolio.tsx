@@ -1,5 +1,5 @@
 import { Container } from '../ui/container';
-import { projects } from '../../Data/Index';
+import { projects } from '../../data/index';
 
 export const Portfolio = () => {
   return (

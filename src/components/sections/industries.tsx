@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { industries } from '../../Data/Index';
+import { industries } from '../../data/index';
 
 export const Industries = () => {
   const [activeIndustry, setActiveIndustry] = useState(industries[0]);

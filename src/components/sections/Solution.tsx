@@ -1,5 +1,5 @@
 import { Container } from '../ui/container';
-import { solutions } from '../../Data/Index';
+import { solutions } from '../../data/index';
 
 export const Solutions = () => {
   return (
