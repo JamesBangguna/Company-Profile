@@ -10,27 +10,18 @@ import {
   CircleHelp,
   ChevronRight,
 } from 'lucide-react';
-
 import { useEffect, useState } from 'react';
 
-const Navbar = () => {
+// 1. Definisikan Interface Props untuk TypeScript
+interface NavbarProps {
+  darkMode: boolean;
+  onToggleDarkMode: () => void;
+}
+
+// 2. Hubungkan Props ke dalam Komponen Navbar
+const Navbar = ({ darkMode, onToggleDarkMode }: NavbarProps) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-
-  const [darkMode, setDarkMode] = useState(() => {
-    return localStorage.getItem('theme') === 'dark';
-  });
-
-  // Dark Mode
-  useEffect(() => {
-    if (darkMode) {
-      document.documentElement.classList.add('dark');
-      localStorage.setItem('theme', 'dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-      localStorage.setItem('theme', 'light');
-    }
-  }, [darkMode]);
 
   // Blur Navbar Saat Scroll
   useEffect(() => {
@@ -104,12 +95,11 @@ const Navbar = () => {
             justify-between
             w-full
             h-[88px]
-            
-           bg-white
-           dark:bg-black
+            bg-white
+            dark:bg-black
             px-5
-           border-slate-200
-           dark:border-black
+            border-slate-200
+            dark:border-black
             relative
             overflow-hidden
           '
@@ -152,15 +142,15 @@ const Navbar = () => {
 
           {/* Right */}
           <div className='flex items-center gap-4 relative z-10'>
+            {/* Menggunakan onToggleDarkMode dari props */}
             <button
-              onClick={() => setDarkMode(!darkMode)}
+              onClick={onToggleDarkMode}
               className='
                 w-10
                 h-10
                 rounded-full
                 bg-white
                 dark:bg-black
-                
                 border-slate-200
                 dark:border-black
                 flex
@@ -180,15 +170,15 @@ const Navbar = () => {
                 min-w-[180px]
                 h-[40px]
                 rounded-full
-               bg-orange-500
-               hover:bg-orange-600
-               text-white
+                bg-orange-500
+                hover:bg-orange-600
+                text-white
                 text-base
                 font-semibold
                 border-2
-               border-orange-400
+                border-orange-400
                 shadow-lg
-               hover:shadow-orange-500/30
+                hover:shadow-orange-500/30
                 transition-all
                 duration-300
                 flex
@@ -210,10 +200,8 @@ const Navbar = () => {
               flex
               items-center
               justify-between
-              
               bg-white
               dark:bg-black
-              
               border-slate-200
               dark:border-black
             '
@@ -232,8 +220,9 @@ const Navbar = () => {
             </div>
 
             <div className='flex items-center gap-3'>
+              {/* Menggunakan onToggleDarkMode dari props */}
               <button
-                onClick={() => setDarkMode(!darkMode)}
+                onClick={onToggleDarkMode}
                 className='
                   w-10
                   h-10
@@ -241,7 +230,6 @@ const Navbar = () => {
                   flex
                   items-center
                   justify-center
-                  
                   border-slate-200
                   dark:border-black
                 '
@@ -262,7 +250,6 @@ const Navbar = () => {
                   flex
                   items-center
                   justify-center
-                  
                   border-slate-200
                   dark:border-black
                   text-black
